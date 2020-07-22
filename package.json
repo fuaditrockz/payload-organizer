@@ -1,0 +1,26 @@
+{
+  "name": "payload-organizer",
+  "version": "1.0.0",
+  "description": "A tools to setup data for push-ready.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuaditrockz/payload-organizer.git"
+  },
+  "keywords": [
+    "payload-organizer",
+    "auth",
+    "authentication",
+    "prepared-data",
+    "javascript"
+  ],
+  "author": "Fuadit Muhammad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuaditrockz/payload-organizer/issues"
+  },
+  "homepage": "https://github.com/fuaditrockz/payload-organizer#readme"
+}
