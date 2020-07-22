@@ -11,6 +11,13 @@ There are many things we must do before the data is sent to the database or retu
 
 Therefore, a payload-organizer is here to help you finalize the data, before the data is forwarded to the server.
 
+##### Solution
+1. You don't need to create promise for setup dataset.
+2. You don't need install `jsonwebtoken`.
+3. You don't need install any hashing password package.
+4. No need setup any set of confirmation email function.
+5. Only `payload-organizer`!
+
 ## How to use it?
 Install the dependencies;
 ```
@@ -34,7 +41,8 @@ const registerPayload = new Organizer({
   }
 });
 
-registerPayload.run(); // will return push-ready object of dataset.
+const fixData = registerPayload.organize();
+console.log(fixData); // will return push-ready object of dataset.
 ```
 
 ## Author
