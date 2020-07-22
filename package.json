@@ -17,7 +17,11 @@
     "prepared-data",
     "javascript"
   ],
-  "author": "Fuadit Muhammad",
+  "author": {
+    "name": "Fuadit Muhammad",
+    "url": "https://github.com/ncb000gt",
+    "email": "muhammadfuaditrockz@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fuaditrockz/payload-organizer/issues"
