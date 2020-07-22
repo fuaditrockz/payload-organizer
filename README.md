@@ -1,5 +1,5 @@
 # payload-organizer
-A tools to setup data for push-ready.
+A tools to setup data for **push-ready**.
 
 ##### What's the problem behind it?
 There are many things we must do before the data is sent to the database or returned to the user. such as;
@@ -36,3 +36,9 @@ const registerPayload = new Organizer({
 
 registerPayload.run(); // will return push-ready object of dataset.
 ```
+
+## Author
+[Fuadit Muhammad](https://github.com/fuaditrockz)
+
+## License
+This project is licensed under the MIT license. See the [LICENSE](https://github.com/fuaditrockz/payload-organizer/blob/master/LICENSE) file for more info.
