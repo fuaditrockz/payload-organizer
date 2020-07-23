@@ -27,12 +27,15 @@ So many tasks that you must do before push fix-data into database, or return fix
 `options`:
 * `validate`
   > Option to run a validation on your `data` object.
+  >
   > default: **`false`**
 * `hashingPassword`
   > Option to hashing `password` object prop.
+  >
   > default: **`false`**
 * `generateToken`
   > Option to add token prop on your `data` object.
+  >
   > default: **`false`**
 * `emailProvider`
 
