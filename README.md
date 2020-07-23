@@ -23,7 +23,18 @@ So many tasks that you must do before push fix-data into database, or return fix
 
 #### `Auth({data, options})`
 `data` is a bunch of your temporary data.
+
 `options`:
+* `validate`
+  > Option to run a validation on your `data` object.
+  > default: **`false`**
+* `hashingPassword`
+  > Option to hashing `password` object prop.
+  > default: **`false`**
+* `generateToken`
+  > Option to add token prop on your `data` object.
+  > default: **`false`**
+* `emailProvider`
 
 ##### `fix()` 
 ```javascript
