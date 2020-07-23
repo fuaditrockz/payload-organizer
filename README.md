@@ -1,35 +1,41 @@
 # payload-organizer
 Hello from Indonesia! A tools to setup data for **push-ready**.
 
-##### What's the problem behind it?
-There are many things we must do before the data is sent to the database or returned to the user. such as;
-1. Validate the payload.
-2. Hashing password.
-3. Sending email.
-4. Return the token.
-5. There is so many conditions on there and another extras todos that you have to set for one time API call.
-
-Therefore, a payload-organizer is here to help you finalize the data, before the data is forwarded to the server.
-
-##### Solution
-1. You don't need to create promise for setup dataset.
-2. You don't need install `jsonwebtoken`.
-3. You don't need install any hashing password package.
-4. No need setup any set of confirmation email function.
-5. Only `payload-organizer`!
-
-## How to use it?
-Install the dependencies;
+Install dependency;
 ```
 > npm install --save payload-organizer
 ```
 
-Then, use it on the code.
+##### What's the problem behind it?
+So many tasks that you must do before push fix-data into database, or return fix-data to another task that you wannna do. Simple solution if you use `payload-organizer`. Only setup the beta-object that you wanna mutating before push/save or return it as fix-data.
 
+### Auth
+`Auth({data, options})`
+#### Problem
+For example if you wanna make the **register** data payload. You need to;
+1. Validate the payload.
+2. Hashing password.
+3. Sending email.
+4. Create the token.
+5. And another conditions that you must set to fix the data object.
+
+#### Solution
+You don't have to do all of the above. You only need to setup the temporary form data and let us do the rest.
+
+##### `fix()` 
 ```javascript
-const Organizer = require('payload-organizer);
+// Your temporary data object
+const objectOfYourData = {
+  name: 'Fuadit Muhammad',
+  email: 'muhammadfuaditrockz@gmail.com',
+  password: 'qwerty123',
+  confirmation_password: 'qwerty123'
+}
+```
+```javascript
+const { Auth } = require('payload-organizer);
 
-const registerPayload = new Organizer({
+const registerPayload = new Auth({
   data: { ...objectOfYourData }, // rest of your data
   options: {
     validate: true,
@@ -41,8 +47,18 @@ const registerPayload = new Organizer({
   }
 });
 
-const fixData = registerPayload.organize();
+const fixData = registerPayload.fix();
 console.log(fixData); // will return push-ready object of dataset.
+```
+Output:
+```javascript
+{
+  name: 'Fuadit Muhammad',
+  email: 'muhammadfuaditrockz@gmail.com',
+  password: '3fc0a7acf087f549ac2b266baf94b8b1',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+  is_verified: false
+}
 ```
 
 ## Author
