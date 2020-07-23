@@ -1,3 +1,9 @@
+<style>
+  .option_card {
+    background-color: #ced6e0;
+    padding: 10px 20px;
+  }
+</style>
 # payload-organizer
 Hello from Indonesia! A tools to setup data for **push-ready**.
 
@@ -22,22 +28,38 @@ So many tasks that you must do before push fix-data into database, or return fix
 > You don't have to do all of the above. You only need to setup the temporary form data and let us do the rest.
 
 #### `Auth({data, options})`
-`data` is a bunch of your temporary data.
+<div class='option_card'>
+  <code>data:</code>
+  <p>is a bunch of your temporary data.</p>
+</div>
 
-`options`:
-* `validate`
-  > Option to run a validation on your `data` object.
-  >
-  > default: **`false`**
-* `hashingPassword`
-  > Option to hashing `password` object prop.
-  >
-  > default: **`false`**
-* `generateToken`
-  > Option to add token prop on your `data` object.
-  >
-  > default: **`false`**
-* `emailProvider`
+<div class='option_card'>
+  <code>options:</code>
+  <ul>
+    <li>
+      <div>
+        <code>validate</code>
+        <p>Option to run a validation on your <code>data</code> object.</p>
+        <p>Default: <code>false</code></p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <code>hashingPassword</code>
+        <p>Option to hashing <code>password</code> object prop.</p>
+        <p>Default: <code>false</code></p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <code>generateToken</code>
+        <p>Option to add token prop on your <code>data</code> object.</p>
+        <p>Default: <code>false</code></p>
+      </div>
+    </li>
+  </ul>
+</div>
+
 
 ##### `fix()` 
 ```javascript
