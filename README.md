@@ -1,9 +1,3 @@
-<style>
-  .option_card {
-    background-color: #ced6e0;
-    padding: 10px 20px;
-  }
-</style>
 # payload-organizer
 Hello from Indonesia! A tools to setup data for **push-ready**.
 
@@ -28,12 +22,12 @@ So many tasks that you must do before push fix-data into database, or return fix
 > You don't have to do all of the above. You only need to setup the temporary form data and let us do the rest.
 
 #### `Auth({data, options})`
-<div class='option_card'>
+<div>
   <code>data:</code>
   <p>is a bunch of your temporary data.</p>
 </div>
 
-<div class='option_card'>
+<div>
   <code>options:</code>
   <ul>
     <li>
