@@ -1,75 +1,59 @@
+<div style='justify-content:center; width:100%;'>
+<img src='_media/cook.svg' width="120" style='display:block; margin:auto;'/>
+</div>
+
 # payload-organizer
-Hello from Indonesia! A tools to setup data for **push-ready**.
+> A tools to cook your data object into **push-ready**
 
-Install dependency;
-```
-> npm install --save payload-organizer
-```
+# What it is?
+**payload-organizer** help you to setup your data easily and *auto-mutating* it, without going through various stages that make your code messy like a jungle.
 
-##### What's the problem behind it?
-So many tasks that you must do before push fix-data into database, or return fix-data to another task that you wannna do. Simple solution if you use `payload-organizer`. Only setup the beta-object that you wanna mutating before push/save or return it as fix-data.
+# Background Problem
+So many tasks that you must do before push fix-data into database, or return fix-data to another task that you wannna do. Simple solution if you use `payload-organizer`. Only setup the *beta-object* that you wanna mutating before push/save or return it as fix-data.
 
-## Auth
-> ###### Problem
-> For example if you wanna make the **register** data payload. You need to;
+In addition, you also have to take care of chaotic *javascript promises* in returning data while thinking of a good code for your project. `payload-organizer` take care of this.
+
+### Example Study Case
+For example if you wanna make the **register** data payload. You need to do these;
 > 1. Validate the payload.
 > 2. Hashing password.
 > 3. Sending email.
 > 4. Create the token.
 > 5. And another conditions that you must set to fix the data object.
 
-> ###### Solution
-> You don't have to do all of the above. You only need to setup the temporary form data and let us do the rest.
+Instead you coding it one by one and over time there is more chaotic, you just make it with call one simple *class function* by **payload-organizer**.
 
-#### `Auth({data, options})`
-<div>
-  <code>data:</code>
-  <p>is a bunch of your temporary data.</p>
-</div>
+# Features
+* One simple class function called
+* Auto token generator
+* Auto hashing
+* Email sender automation
+* Speed up generating fix-data
 
-<div>
-  <code>options:</code>
-  <ul>
-    <li>
-      <div>
-        <code>validate</code>
-        <p>Option to run a validation on your <code>data</code> object.</p>
-        <p>Default: <code>false</code></p>
-      </div>
-    </li>
-    <li>
-      <div>
-        <code>hashingPassword</code>
-        <p>Option to hashing <code>password</code> object prop.</p>
-        <p>Default: <code>false</code></p>
-      </div>
-    </li>
-    <li>
-      <div>
-        <code>generateToken</code>
-        <p>Option to add token prop on your <code>data</code> object.</p>
-        <p>Default: <code>false</code></p>
-      </div>
-    </li>
-  </ul>
-</div>
+# Getting Started
+Check out the [Quick Start](/quickstart) doc to get started.
 
-
-##### `fix()` 
+# Usage
+For example you have some temporary data object before you push it into database or returning it.
 ```javascript
-// Your temporary data object
-const objectOfYourData = {
+const yourDataObject = {
   name: 'Fuadit Muhammad',
   email: 'muhammadfuaditrockz@gmail.com',
-  password: 'qwerty123',
-  confirmation_password: 'qwerty123'
+  password: '123456',
+  confirmation_password: '123456',
 }
 ```
+Then, you only import `payload-organizer` module.
 ```javascript
-const { Auth } = require('payload-organizer);
+const Organizer = requiree('payload-organizer');
 
-const registerPayload = new Auth({
-  data: { ...objectOfYourData }, // rest of your data
+// Or on ES6
+import Organizer from 'payload-organizer';
+```
+Last put your temporary data object on `Organizer`'s `data` props. And set the `options` that you want.
+```javascript
+const fixData = new Organizer({
+  data: { ...yourDataObject }, // rest of your data
   options: {
     validate: true,
     hashingPassword: true,
@@ -80,11 +64,12 @@ const registerPayload = new Auth({
   }
 });
 
-const fixData = registerPayload.fix();
-console.log(fixData); // will return push-ready object of dataset.
+console.log(fixData.fix());
 ```
-Output:
-```javascript
+
+Output;
+
+```bash
 {
   name: 'Fuadit Muhammad',
   email: 'muhammadfuaditrockz@gmail.com',
@@ -94,8 +79,8 @@ Output:
 }
 ```
 
-## Author
+# Author
 [Fuadit Muhammad](https://github.com/fuaditrockz)
 
-## License
+# License
 This project is licensed under the MIT license. See the [LICENSE](https://github.com/fuaditrockz/payload-organizer/blob/master/LICENSE) file for more info.
