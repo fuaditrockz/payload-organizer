@@ -35,7 +35,7 @@ You can use the validation with only *Boolean* like `true`, it means your valida
 // ...
 ```
 
-!> For use `validate.custom`, is required to set the `validate.type` into `"regular"` for running your function inside custom prop.
+!> For use `validate.custom`, is required to set the `validate.type` into `"custom"` for running your function inside custom prop.
 
 ### options.hashingPassword
 ?> This option will hashing the `password` value inside your [data prop](/props-data) object.
