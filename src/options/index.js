@@ -1,12 +1,4 @@
-const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const errorResponse = (message, errorProp) => {
-  return {
-    error: true,
-    message: message,
-    value: errorProp
-  }
-}
+const { emailRegex, errorResponse } = require('./helpers')
 
 exports.validateRegular = payload => {
   if (!payload.email || !payload.password) {
