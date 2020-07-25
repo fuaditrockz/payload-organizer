@@ -1,4 +1,5 @@
 const { options: optionMethods } = require('./src')
+const { validate } = optionMethods
 
 class Organizer {
   constructor(props) {
@@ -8,7 +9,7 @@ class Organizer {
   validate(data, options) {
     switch (options.validate.type) {
       case 'regular':
-        return optionMethods.validateRegular(data)
+        return validate.validateRegular(data)
       default:
         break
     }
@@ -23,11 +24,13 @@ class Organizer {
 }
 
 const yourDataObject = {
-  email: 'muhammadfuaditrockz@gmail.com',
+  
   password: '123456',
   confirmation_password: '123456'
 }
 
+const test = validate.validateRegular(yourDataObject)
+console.log(test)
 const fixData = new Organizer({
   data: yourDataObject,
   options: {
