@@ -1,7 +1,7 @@
 const { validateRegular  } = require('../src/options/validate')
 const { errorResponse } = require('../src/helpers')
 
-describe('validate prop', () => {
+describe('options -> validate: true || Object', () => {
   describe(`validate -> type: "regular"`, () => {
     test(`Validated payload`, () => {
       const data = {
