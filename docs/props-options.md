@@ -8,15 +8,40 @@ Here is where you configure the  data that return.
 ## Props
 These are available props inside `options`.
 
-### validate
-?> This option will validation your object. If you set it as `true`, it will running first inside the `Organize`'s class.
+### options.validate
+?> This option will be as validator for your object. If you set it as `true`, it will running first inside the `Organize`'s class.
   <br/> Default `false`
 
-### hashingPassword
+You can use the validation with only *Boolean* like `true`, it means your validate default is `"regular"`,
+<br/> or 
+<br/> *Object* for another options like below;
+
+`validate.type`: Reference for your type of the validate. The value type is *Enum*.
+   - `"regular"`
+     Only valiadate **email** and **password**.
+   - `"register"`
+     Validate **first_name**, **last_name**, **email**, and **password**
+   - `"custom"`
+     You can custom the validation with your own validator. If you choose this, please follow `validate.custom` below.
+
+`validate.custom`: Reference for `validate.type: "custom"`. The value type is *Function*.
+
+```javascript
+// ...
+   type: 'custom',
+   custom: () => {
+     // Your custom validator
+   }
+// ...
+```
+
+!> For use `validate.custom`, is required to set the `validate.type` into `"regular"` for running your function inside custom prop.
+
+### options.hashingPassword
 ?> This option will hashing the `password` value inside your [data prop](/props-data) object.
   <br/> Default `false`
 
-### generateToken
+### options.generateToken
 ?> This option will give the *token* on final return of your fix-data. The key name on the object is `token`.
   <br/> Default `false`
 
