@@ -2,19 +2,17 @@ const { emailRegex, errorResponse } = require('../helpers')
 
 exports.validateRegular = payload => {
   if (!payload.email || !payload.password) {
-    switch ('undefined') {
-      case typeof payload.email:
-        return errorResponse(
-          'Email is empty',
-          !payload.email ? 'No email' : payload.email
-        )
-      case typeof payload.password:
-        return errorResponse(
-          'Password is empty',
-          !payload.password ? 'No password' : payload.password
-        )
-      default:
-        break
+    if (!payload.email) {
+      return errorResponse(
+        'Email is empty',
+        !payload.email ? 'No email' : payload.email
+      )
+    }
+    if (!payload.password) {
+      return errorResponse(
+        'Password is empty',
+        !payload.password ? 'No password' : payload.password
+      ) 
     }
   } else {
     const isEmail = emailRegex.test(payload.email)
