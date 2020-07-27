@@ -24,7 +24,7 @@ class Organizer {
 }
 
 const yourDataObject = {
-  
+  email: null,
   password: '123456',
   confirmation_password: '123456'
 }
