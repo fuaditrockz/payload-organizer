@@ -1,5 +1,6 @@
 const { emailRegex, errorResponse } = require('../helpers')
 
+console.log('Create some update')
 exports.validateRegular = payload => {
   if (!payload.email || !payload.password) {
     if (!payload.email) {
