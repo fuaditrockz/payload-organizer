@@ -4,7 +4,7 @@
   "description": "A tools to setup data for push-ready.",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
+    "test": "jest",
     "docs": "docsify serve ./docs"
   },
   "repository": {
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/fuaditrockz/payload-organizer/issues"
   },
-  "homepage": "https://github.com/fuaditrockz/payload-organizer#readme"
+  "homepage": "https://github.com/fuaditrockz/payload-organizer#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
